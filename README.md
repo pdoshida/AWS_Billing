@@ -3,7 +3,7 @@
 参考
 https://dev.classmethod.jp/cloud/aws/notify-slack-aws-billing/
 ```
-aws s3 mb s3://lab-billing-lambda-bucket${s3バケット名}
+aws s3 mb s3://${s3バケット名}
 sam package --output-template-file packaged.yaml     --s3-bucket ${s3バケット名}
 sam deploy --template-file packaged.yaml --stack-name NotifyBillingToSlack --capabilities CAPABILITY_IAM --parameter-overrides SlackWebhookUrl=${slack webhook}
 ```
